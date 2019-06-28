@@ -9,13 +9,13 @@ import (
     "strings"
     "time"
 )
-/*
+
 var hosts []string = []string{"10.142.232.181:8000",
                               "10.142.232.182:8001"}
-*/
+var ports = make(map[string]int)
+var miIP = "10.142.232.181:"
 const (
     PROT  = "tcp"
-    ports := make(map[string]int)
 )
 
 func send(n int) {
@@ -51,11 +51,14 @@ func start() {
 }
 
 func main() {
+    //Integrantes:
+    //Alvaro pOma
+    //Renato Zegarra
+    //Cesar Gutierrez
+	
     rand.Seed(time.Now().UTC().UnixNano())
     var LOCAL int
     var IPamigo int
-
-    var string miIP = "10.142.232.181:"
 
     fmt.Print("Ingrese su puerto: ")
     fmt.Scanf("%d\n", &LOCAL)
@@ -63,7 +66,7 @@ func main() {
     fmt.Scanf("%d\n", &IPamigo)
     
     go start()
-    ln, _ := net.Listen(PROT, fmt.Sprintf("10.142.232.181:%d", LOCAL))
+    ln, _ := net.Listen(PROT, fmt.Sprintf("%s%d",miIP, LOCAL))
 
     defer ln.Close()
     for {
