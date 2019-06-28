@@ -51,6 +51,11 @@ func start() {
 }
 
 func main() {
+    //Integrantes:
+    //Alvaro pOma
+    //Renato Zegarra
+    //Cesar Gutierrez
+	
     rand.Seed(time.Now().UTC().UnixNano())
     var LOCAL int
     var IPamigo int
